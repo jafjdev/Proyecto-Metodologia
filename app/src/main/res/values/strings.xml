@@ -24,10 +24,20 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="contact_us"> Contact Us</string>
-    <string name="direction">Direccion</string>
-    <string name="zone">Cumbres de curumo</string>
-    <string name="street">Av.Principal</string>
-    <string name="building">Edificio La Campiña apartamento #43</string>
+    <string name="direction">Direccion </string>
+    <string name="zone">Cumbres de curumo </string>
+    <string name="hintName">Nombre</string>
+    <string name="hintLastName">Apellido</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPasword">Password</string>
+    <string name="dntAccount">No tienes cuenta? Registrate!</string>
+    <string name="signUpbtn">Registrar</string>
+    <string name="titleSignUp">Registro de Usuario</string>
+    <string name="street">Av.Principal </string>
+    <string name="building">Edificio La Campiña apartamento #43 </string>
     <string name="phone">0212.978.0069</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="forgotPassword">Olvide mi contraseña</string>
+    <string name="send">Enviar</string>
 
 </resources>
