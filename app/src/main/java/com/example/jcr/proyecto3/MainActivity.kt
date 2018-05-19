@@ -65,19 +65,22 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     val manager = supportFragmentManager
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         // Handle navigation view item clicks here.
+        val fragmentProjectList = ProjectList()
+        val fragmentContactUs = Contact_us()
+        val transaction = supportFragmentManager.beginTransaction()
         when (item.itemId) {
             R.id.nav_camera -> {
-                val fragment = ProjectList()
-                val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frLayout, fragment)
+                transaction.replace(R.id.frLayout, fragmentProjectList)
                 transaction.commit()
-
             }
+
             R.id.nav_gallery -> {
 
             }
-            R.id.nav_send -> {
 
+            R.id.contact_us -> {
+                transaction.replace(R.id.frLayout, fragmentContactUs)
+                transaction.commit()
             }
         }
 
