@@ -28,8 +28,11 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 auth.sendPasswordResetEmail(email)
                         .addOnCompleteListener(this){
                             task->
-                                if(task.isSuccessful)
-                                    startActivity(Intent(this,LoginActivity::class.java))
+                                if(task.isSuccessful){
+                                    val intent = Intent(this, LoginActivity::class.java)
+                                    finish()
+                                    startActivity(intent)
+                                }
                                 else
                                     Toast.makeText(this,"Error  al enviar email",Toast.LENGTH_SHORT)
                         }

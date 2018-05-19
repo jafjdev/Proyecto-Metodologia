@@ -81,7 +81,9 @@ class SignUpActivity : AppCompatActivity() {
     */
 
     private fun action(){
-        startActivity(Intent(this,LoginActivity::class.java))
+        val intent = Intent(this, LoginActivity::class.java)
+        finish()
+        startActivity(intent)
     }
 
     private fun verifyEmail(user:FirebaseUser?){

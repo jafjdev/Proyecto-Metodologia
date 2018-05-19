@@ -71,6 +71,7 @@ class LoginActivity : AppCompatActivity() {
         txtSignUp!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val intent = Intent(v!!.context, SignUpActivity::class.java)
+                finish()
                 startActivity(intent)
             }
         })
@@ -107,11 +108,15 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun action(){
-        startActivity(Intent(this,MainActivity::class.java))
+        val intent = Intent(this, MainActivity::class.java)
+        finish()
+        startActivity(intent)
     }
 
     private fun forgotPaction(){
-        startActivity(Intent(this,ForgotPasswordActivity::class.java))
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            finish()
+            startActivity(intent)
     }
 
 }
