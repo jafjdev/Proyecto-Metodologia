@@ -23,4 +23,11 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_us"> Contact Us</string>
+    <string name="direction">Direccion</string>
+    <string name="zone">Cumbres de curumo</string>
+    <string name="street">Av.Principal</string>
+    <string name="building">Edificio La Campiña apartamento #43</string>
+    <string name="phone">0212.978.0069</string>
+
 </resources>
