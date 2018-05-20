@@ -6,7 +6,9 @@
 ![alt text](https://i.gyazo.com/5fb3df04d9b2052b775d562b2cebbdcf.png)
 
 * [Gradle](https://gradle.org/) - Manejo de Dependencias.
+* [Firebase](https://firebase.google.com/) - Almacenamiento de informacon en la nube
 
 ## Autor.
 
 * **Jose Cedeno** - [Jafjdev](https://github.com/jafjdev/)
+
