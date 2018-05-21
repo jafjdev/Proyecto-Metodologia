@@ -45,8 +45,8 @@ class ProjectList : Fragment() {
         recyclerView?.layoutManager = LinearLayoutManager(context)
         val projects = ArrayList<Project>()
 
-        projects.add(Project("Proyecto 1","soy yo",R.drawable.logodroid))
-        projects.add(Project("Proyecto 2 ","Esto esta muy loco wn",R.drawable.logodroid))
+        projects.add(Project("Ramiro es marico","marico por dos",R.drawable.logodroid))
+        projects.add(Project("Marico el que lo lea ","VOY A JUGAR PERRAS",R.drawable.logodroid))
 
         val adapter = ProjectAdapter(projects)
         recyclerView.adapter = adapter

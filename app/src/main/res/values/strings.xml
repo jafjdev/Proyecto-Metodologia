@@ -39,5 +39,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="forgotPassword">Olvide mi contraseña</string>
     <string name="send">Enviar</string>
-
+    <string name="newProject">Nuevo Proyecto</string>
+    <string name="project_name">Nombre del proyecto</string>
+    <string name="project_description">Descripcion del proyecto</string>
 </resources>

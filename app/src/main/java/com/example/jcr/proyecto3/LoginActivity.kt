@@ -23,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
     private var mEmailView: TextInputEditText? = null
     private var mPasswordView: TextInputEditText? = null
 
-    private lateinit var imagen:AppCompatImageView
+    private lateinit var imagen: AppCompatImageView
 
     private var mLoginFormView: View? = null
     private var email_sign_in_button: Button? = null
@@ -31,9 +31,9 @@ class LoginActivity : AppCompatActivity() {
 
     private var txtFrgtPassword: TextView? = null
 
-    private lateinit var progressBar:ProgressBar
-    private lateinit var auth:FirebaseAuth
 
+    private lateinit var progressBar: ProgressBar
+    private lateinit var auth: FirebaseAuth
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,7 +44,6 @@ class LoginActivity : AppCompatActivity() {
 
         mEmailView = findViewById<View>(R.id.email) as TextInputEditText
         mPasswordView = findViewById<View>(R.id.password) as TextInputEditText
-
         imagen = findViewById<View>(R.id.imagenLogin) as AppCompatImageView
         email_sign_in_button = findViewById<View>(R.id.email_sign_in_button) as Button
         txtSignUp = findViewById<View>(R.id.txtSignUp) as TextView
@@ -52,30 +51,19 @@ class LoginActivity : AppCompatActivity() {
         progressBar = findViewById<View>(R.id.progressBarLogin) as ProgressBar
         txtFrgtPassword = findViewById<View>(R.id.txtFrgtPassword) as TextView
 
-
-        txtFrgtPassword!!.setOnClickListener(object: View.OnClickListener{
+        txtFrgtPassword!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 forgotPaction()
             }
-        })
-
-        mPasswordView!!.setOnEditorActionListener(TextView.OnEditorActionListener { textView, id, keyEvent ->
-            if (id == EditorInfo.IME_ACTION_DONE || id == EditorInfo.IME_NULL) {
-                //attemptLogin()
-                return@OnEditorActionListener true
-            }
-            false
         })
 
         //signUp
         txtSignUp!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val intent = Intent(v!!.context, SignUpActivity::class.java)
-                finish()
                 startActivity(intent)
             }
         })
-
 
         //btn
         email_sign_in_button!!.setOnClickListener(object : View.OnClickListener {
@@ -84,40 +72,52 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        //val mEmailSignInButton = findViewById<View>(R.id.email_sign_in_button) as Button
         mLoginFormView = findViewById(R.id.login_form)
     }
 
-    private fun loginUser(){
-        val user:String=mEmailView?.text.toString()
-        val password:String=mPasswordView?.text.toString()
-        if (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(password)){
+    private fun loginUser() {
+        val user: String = mEmailView?.text.toString()
+        val password: String = mPasswordView?.text.toString()
+        if (!TextUtils.isEmpty(user) && !TextUtils.isEmpty(password)) {
             imagen.visibility = View.INVISIBLE
             progressBar.visibility = View.VISIBLE
-            auth.signInWithEmailAndPassword(user,password)
-                    .addOnCompleteListener(this){
-                        task->
-                            if(task.isSuccessful)
-                                action()
-                            else{
-                                imagen.visibility = View.VISIBLE
-                                progressBar.visibility = View.INVISIBLE
-                            }
+            auth.signInWithEmailAndPassword(user, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful)
+                            action()
+                        else {
+                            imagen.visibility = View.VISIBLE
+                            progressBar.visibility = View.INVISIBLE
+                        }
                     }
-            }
+        }
     }
 
-    private fun action(){
+    private fun action() {
         val intent = Intent(this, MainActivity::class.java)
         finish()
         startActivity(intent)
     }
 
-    private fun forgotPaction(){
-            val intent = Intent(this, ForgotPasswordActivity::class.java)
-            finish()
-            startActivity(intent)
+    private fun forgotPaction() {
+        val intent = Intent(this, ForgotPasswordActivity::class.java)
+        startActivity(intent)
     }
 
+    override fun onBackPressed() {
+        this.finish()
+    }
+
+    /*
+        private fun test() {
+            val intent = Intent(this, NewProjectActivity::class.java)
+            startActivity(intent)
+        }
+
+        private fun test2(){
+            val intent = Intent(this, SearchActivity::class.java)
+            startActivity(intent)
+
+        }*/
 }
 

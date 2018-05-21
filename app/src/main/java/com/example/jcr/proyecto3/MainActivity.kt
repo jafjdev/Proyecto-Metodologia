@@ -1,5 +1,6 @@
 package com.example.jcr.proyecto3
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -20,8 +21,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            val intent = Intent(this, NewProjectActivity::class.java)
+            startActivity(intent)
         }
 
         val toggle = ActionBarDrawerToggle(
