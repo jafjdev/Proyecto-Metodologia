@@ -13,10 +13,9 @@ import com.bumptech.glide.Glide
 import android.widget.TextView
 
 
-
-class ProjectAdapter(var list: ArrayList<Project>): RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
+class ProjectAdapter(var list: ArrayList<Project>) : RecyclerView.Adapter<ProjectAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.content_item,parent,false)
+        val v = LayoutInflater.from(parent.context).inflate(R.layout.content_item, parent, false)
         return ViewHolder(v)
     }
 
@@ -29,13 +28,13 @@ class ProjectAdapter(var list: ArrayList<Project>): RecyclerView.Adapter<Project
     }
 
     //clase anidada donde se maneja la vista.
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        fun bindItem(data:Project){
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        fun bindItem(data: Project) {
             val thumbnail: AppCompatImageView = itemView.findViewById(R.id.thumbnail)
-            val title:AppCompatTextView= itemView.findViewById(R.id.txtTitle)
-            val description:AppCompatTextView= itemView.findViewById(R.id.txtDescription)
+            val title: AppCompatTextView = itemView.findViewById(R.id.txtTitle)
+            val description: AppCompatTextView = itemView.findViewById(R.id.txtDescription)
 
-            title.text= data.name
+            title.text = data.name
             description.text = data.desc
             Glide.with(itemView.context).load(data.thumbnail).into(thumbnail)
             itemView.setOnClickListener {
@@ -44,31 +43,3 @@ class ProjectAdapter(var list: ArrayList<Project>): RecyclerView.Adapter<Project
         }
     }
 }
-
-/*
-*     class UsersViewHolder extends RecyclerView.ViewHolder {
-
-        View mView;
-
-        public UsersViewHolder(View itemView) {
-            super(itemView);
-
-            mView = itemView;
-
-        }
-
-        public void setDetails(Context ctx, String userName, String userStatus, String userImage){
-
-            TextView user_name = (TextView) mView.findViewById(R.id.name_text);
-            TextView user_status = (TextView) mView.findViewById(R.id.status_text);
-            ImageView user_image = (ImageView) mView.findViewById(R.id.profile_image);
-
-
-            user_name.setText(userName);
-            user_status.setText(userStatus);
-
-            Glide.with(ctx).load(userImage).into(user_image);
-
-
-        }
-* */

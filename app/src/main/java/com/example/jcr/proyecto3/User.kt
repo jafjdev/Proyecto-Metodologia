@@ -2,13 +2,11 @@ package com.example.jcr.proyecto3
 
 class User {
 
-    var name : String? = null
-    var lastName : String? = null
+    var name: String? = null
+    var lastName: String? = null
     var uuid: String? = null
 
-    constructor(){
-
-    }
+    constructor() {}
 
     constructor(name: String?, lastName: String?, uuid: String?) {
         this.name = name

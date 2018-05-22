@@ -31,9 +31,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
-
         val fragment = ProjectList()
+
         val transaction = supportFragmentManager.beginTransaction()
+
         transaction.replace(R.id.frLayout, fragment)
         transaction.commit()
     }
@@ -47,21 +48,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         when (item.itemId) {
             R.id.action_settings -> return true
             else -> return super.onOptionsItemSelected(item)
         }
     }
-
 
     val manager = supportFragmentManager
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
@@ -74,17 +70,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 transaction.replace(R.id.frLayout, fragmentProjectList)
                 transaction.commit()
             }
-
             R.id.nav_gallery -> {
-
             }
-
             R.id.contact_us -> {
                 transaction.replace(R.id.frLayout, fragmentContactUs)
                 transaction.commit()
             }
         }
-
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }

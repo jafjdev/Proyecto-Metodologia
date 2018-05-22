@@ -16,23 +16,18 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
-
-
-    // UI references.
-
     private var mEmailView: TextInputEditText? = null
     private var mPasswordView: TextInputEditText? = null
 
     private lateinit var imagen: AppCompatImageView
-
     private var mLoginFormView: View? = null
+
     private var email_sign_in_button: Button? = null
     private var txtSignUp: TextView? = null
 
     private var txtFrgtPassword: TextView? = null
-
-
     private lateinit var progressBar: ProgressBar
+
     private lateinit var auth: FirebaseAuth
 
 
@@ -47,9 +42,9 @@ class LoginActivity : AppCompatActivity() {
         imagen = findViewById<View>(R.id.imagenLogin) as AppCompatImageView
         email_sign_in_button = findViewById<View>(R.id.email_sign_in_button) as Button
         txtSignUp = findViewById<View>(R.id.txtSignUp) as TextView
-
         progressBar = findViewById<View>(R.id.progressBarLogin) as ProgressBar
         txtFrgtPassword = findViewById<View>(R.id.txtFrgtPassword) as TextView
+
 
         txtFrgtPassword!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
@@ -57,7 +52,6 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        //signUp
         txtSignUp!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 val intent = Intent(v!!.context, SignUpActivity::class.java)
@@ -65,7 +59,6 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        //btn
         email_sign_in_button!!.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 loginUser()
@@ -108,16 +101,5 @@ class LoginActivity : AppCompatActivity() {
         this.finish()
     }
 
-    /*
-        private fun test() {
-            val intent = Intent(this, NewProjectActivity::class.java)
-            startActivity(intent)
-        }
-
-        private fun test2(){
-            val intent = Intent(this, SearchActivity::class.java)
-            startActivity(intent)
-
-        }*/
 }
 

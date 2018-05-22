@@ -43,7 +43,7 @@ class SignUpActivity : AppCompatActivity() {
         progressBar = findViewById(R.id.progressBar)
 
         database = FirebaseDatabase.getInstance()
-        
+
         auth = FirebaseAuth.getInstance()
         dbReference = database.reference.child("User")
 
@@ -74,7 +74,6 @@ class SignUpActivity : AppCompatActivity() {
                     userDB.child("uuid").setValue(auth.uid)
                     action()
                 } else {
-                    Log.e("BUG", "sendEmailVerification", task.exception)
                     Toast.makeText(this,
                             "Failed to send verification email.",
                             Toast.LENGTH_SHORT).show()
@@ -116,6 +115,7 @@ class SignUpActivity : AppCompatActivity() {
                     }
                 }
     }
+
     /**Procedimiento que se ejecuta al precionar la tecla de back,
      * el usuario sera llevado a la ventana de login y se realizara
      * la desconeccion de la base de datos
