@@ -22,20 +22,18 @@ class ForgotPasswordActivity : AppCompatActivity() {
         auth = FirebaseAuth.getInstance()
     }
 
-    fun send(view:View){
+    fun send(view: View) {
         val email = editEmail.text.toString()
-            if(!TextUtils.isEmpty(email))
-                auth.sendPasswordResetEmail(email)
-                        .addOnCompleteListener(this){
-                            task->
-                                if(task.isSuccessful){
-                                    val intent = Intent(this, LoginActivity::class.java)
-                                    finish()
-                                    startActivity(intent)
-                                }
-                                else
-                                    Toast.makeText(this,"Error  al enviar email",Toast.LENGTH_SHORT)
-                        }
+        if (!TextUtils.isEmpty(email))
+            auth.sendPasswordResetEmail(email)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            val intent = Intent(this, LoginActivity::class.java)
+                            finish()
+                            startActivity(intent)
+                        } else
+                            Toast.makeText(this, "Error  al enviar email", Toast.LENGTH_SHORT)
+                    }
 
     }
 }

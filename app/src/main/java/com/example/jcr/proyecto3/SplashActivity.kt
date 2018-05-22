@@ -16,6 +16,6 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, LoginActivity::class.java)
             intent.putExtra("key", 1)
             startActivity(intent)
-        },3000)
+        }, 3000)
     }
 }
