@@ -25,12 +25,12 @@
             android:text="@string/project_name" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/editNombreP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Nombre"
+            android:inputType="textPersonName" />
 
         <TextView
             android:id="@+id/textView3"
@@ -39,12 +39,12 @@
             android:text="@string/project_description" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="Descripcion"
+            android:inputType="textPersonName" />
     </LinearLayout>
 
     <Button
@@ -53,5 +53,13 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/linearL"
         android:text="Agregar Usuarios" />
+
+    <Button
+        android:id="@+id/crearProyectoBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Crear Proyecto"
+        android:layout_below="@+id/agregarUsuariosBtn"
+        />
 
 </RelativeLayout>
