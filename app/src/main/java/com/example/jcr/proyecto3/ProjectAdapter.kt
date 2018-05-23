@@ -35,8 +35,8 @@ class ProjectAdapter(var list: ArrayList<Project>) : RecyclerView.Adapter<Projec
             val description: AppCompatTextView = itemView.findViewById(R.id.txtDescription)
 
             title.text = data.name
-            description.text = data.desc
-            Glide.with(itemView.context).load(data.thumbnail).into(thumbnail)
+            description.text = data.description
+            //Glide.with(itemView.context).load(data.uidCreador).into(thumbnail)
             itemView.setOnClickListener {
                 Snackbar.make(itemView, "Projecto name: ${data.name}", Snackbar.LENGTH_LONG).show();
             }
